@@ -13,9 +13,12 @@ mod "m1" {
     }
   }
 }
-
 dashboard "d1"{
     table {
-        sql = "select '${var.v1}' as var_value"
+       query = query.q1
     }
+}
+
+query "q1"{
+    sql = m2.query.q1.sql
 }
