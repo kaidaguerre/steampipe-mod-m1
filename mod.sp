@@ -10,9 +10,13 @@ mod "m1" {
   require {
     mod "github.com/kaidaguerre/steampipe-mod-m2" {
       version = "*"
+      args = {
+        v1 = var.v1
+      }
     }
   }
 }
+
 dashboard "d1"{
     table {
        query = query.q1
